@@ -37,7 +37,11 @@ const ResultsSection = ({ moviesList, isLoading }: Props) => {
       <FlatList
         data={moviesList}
         renderItem={({ item }) => (
-          <Card title={item.title} text={parseYear(item.release_date)} />
+          <Card
+            title={item.title}
+            text={parseYear(item.release_date)}
+            imageUrl={`https://image.tmdb.org/t/p/w500/${item.poster_path}`}
+          />
         )}
         keyExtractor={(movie: MovieProps) => movie?.id.toString()}
         ItemSeparatorComponent={() => <Divider transparent />}

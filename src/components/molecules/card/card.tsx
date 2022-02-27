@@ -10,7 +10,10 @@ type Props = {
   titleStyle?: TextStyle;
   title: string;
   text: string;
+  imageUrl: string;
 };
+
+const IMAGE_PLACEHOLDER = "https://www.fillmurray.com/640/360";
 
 const Card = ({
   containerStyle,
@@ -18,12 +21,15 @@ const Card = ({
   subtitleStyle,
   title,
   text,
+  imageUrl,
 }: Props) => (
   <View style={containerStyle}>
     <View style={styles.imageContainer}>
       <Image
         style={styles.imageStyle}
-        source={{ uri: "https://www.fillmurray.com/640/360" }}
+        source={{
+          uri: imageUrl ? imageUrl : IMAGE_PLACEHOLDER,
+        }}
       />
     </View>
     <View style={styles.textContainer}>
