@@ -1,6 +1,7 @@
 import { useState } from "react";
-import { SafeAreaView, StyleSheet, View } from "react-native";
+import { SafeAreaView, StyleSheet } from "react-native";
 import { Divider } from "./src/components/atoms/divider";
+import { Card } from "./src/components/molecules/card";
 import { Header } from "./src/components/molecules/header";
 import { SearchForm } from "./src/components/molecules/search-section";
 import defaultTheme from "./src/theme/theme";
@@ -26,6 +27,7 @@ export default function App() {
         onSearch={() => console.log(inputValue)}
       />
       <Divider />
+      <Card />
     </SafeAreaView>
   );
 }
