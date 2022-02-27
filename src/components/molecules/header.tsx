@@ -11,6 +11,7 @@ const styles = StyleSheet.create({
   containerStyle: {
     alignContent: "center",
     justifyContent: "center",
+    paddingVertical: 20,
   },
   subTitle: {
     fontSize: 17,

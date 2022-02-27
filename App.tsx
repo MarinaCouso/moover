@@ -1,11 +1,11 @@
-import { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { SafeAreaView, StyleSheet } from "react-native";
 import { Divider } from "./src/components/atoms/divider";
-import { Card } from "./src/components/molecules/card";
 import { Header } from "./src/components/molecules/header";
 import { SearchForm } from "./src/components/molecules/search-section";
 import defaultTheme from "./src/theme/theme";
 import { getMoviesFromApi } from "./src/api/api";
+import { ResultsSection } from "./src/components/molecules/results-section";
 
 const styles = StyleSheet.create({
   appContainer: {
@@ -32,16 +32,14 @@ export default function App() {
 
   return (
     <SafeAreaView style={styles.appContainer}>
-      <Divider transparent />
       <Header />
-      <Divider transparent />
       <SearchForm
         setInputValue={setInputValue}
         inputValue={inputValue}
         onSearch={getMovies}
       />
       <Divider />
-      <Card />
+      <ResultsSection moviesList={moviesList} isLoading={isLoading} />
     </SafeAreaView>
   );
 }

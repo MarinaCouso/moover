@@ -14,7 +14,7 @@ const styles = StyleSheet.create({
     backgroundColor: defaultTheme.$primaryColor,
     width: "80%",
     alignSelf: "center",
-    minHeight: "20%",
+    height: 250,
     padding: 10,
     borderRadius: 10,
   },

@@ -8,9 +8,17 @@ type Props = {
   containerStyle?: ViewStyle;
   subtitleStyle?: TextStyle;
   titleStyle?: TextStyle;
+  title: string;
+  text: string;
 };
 
-const Card = ({ containerStyle, titleStyle, subtitleStyle }: Props) => (
+const Card = ({
+  containerStyle,
+  titleStyle,
+  subtitleStyle,
+  title,
+  text,
+}: Props) => (
   <View style={containerStyle}>
     <View style={styles.imageContainer}>
       <Image
@@ -19,11 +27,11 @@ const Card = ({ containerStyle, titleStyle, subtitleStyle }: Props) => (
       />
     </View>
     <View style={styles.textContainer}>
-      <Text bold style={titleStyle} text="Movie title" />
-      <Text style={titleStyle} text="Movie title" />
+      <Text bold style={titleStyle} text="Title" />
+      <Text style={titleStyle} text={title} />
       <Divider transparent />
-      <Text bold style={subtitleStyle} text="Movie year" />
-      <Text style={subtitleStyle} text="Movie year" />
+      <Text bold style={subtitleStyle} text="Release year" />
+      <Text style={subtitleStyle} text={text} />
     </View>
   </View>
 );
