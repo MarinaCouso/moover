@@ -8,6 +8,7 @@ type Props = {
   containerStyle?: ViewStyle;
   inputValue: string;
   setInputValue: (newText: string) => void;
+  onSearch: () => void;
 };
 
 const styles = StyleSheet.create({
@@ -26,18 +27,19 @@ const styles = StyleSheet.create({
   },
 });
 
-const SearchForm = ({ containerStyle, inputValue, setInputValue }: Props) => (
+const SearchForm = ({
+  containerStyle,
+  inputValue,
+  setInputValue,
+  onSearch,
+}: Props) => (
   <View style={containerStyle}>
     <InputText
       placeholder="Type here..."
       inputValue={inputValue}
       onChangeText={(newText) => setInputValue(newText)}
     />
-    <Button
-      containerStyle={styles.button}
-      title="Search"
-      onPress={() => console.log(inputValue)}
-    />
+    <Button containerStyle={styles.button} title="Search" onPress={onSearch} />
   </View>
 );
 
