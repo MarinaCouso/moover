@@ -4,7 +4,7 @@ A simple app to search for movies basic information based on TMDB api.
 
 ## How has it been developed?
 
-Using React Native Expo with Typescript. Also [Moment] (https://momentjs.com/) library has been used to get the movies years.
+Using [React Native](https://reactnative.dev/docs/environment-setup) with Expo and Typescript. Also [Moment](https://momentjs.com/) library has been used to get the movies years.
 
 ## How can I run it?
 
