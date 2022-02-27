@@ -1,12 +1,10 @@
 import React from "react";
 import { View, StyleSheet, ViewStyle, TextStyle } from "react-native";
-import defaultTheme from "../../theme/theme";
-import { Button } from "../atoms/button";
 import { Text } from "../atoms/text";
 
 type Props = {
   containerStyle?: ViewStyle;
-  subtitleStyle: TextStyle;
+  subtitleStyle?: TextStyle;
 };
 
 const styles = StyleSheet.create({
@@ -24,7 +22,7 @@ const styles = StyleSheet.create({
 
 const Header = ({ containerStyle, subtitleStyle }: Props) => (
   <View style={containerStyle}>
-    <Text text="Moover" />
+    <Text bold text="Moover" />
     <Text style={subtitleStyle} text="Your movies search app!" />
   </View>
 );

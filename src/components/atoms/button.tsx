@@ -14,7 +14,6 @@ const styles = StyleSheet.create({
   container: {
     backgroundColor: defaultTheme.$primaryColor,
     width: "40%",
-    padding: 5,
     borderRadius: 7,
   },
   text: {
@@ -26,7 +25,7 @@ const styles = StyleSheet.create({
 
 const Button = ({ containerStyle, textStyle, title, onPress }: Props) => (
   <Pressable style={containerStyle} onPress={onPress}>
-    <Text text={title} style={textStyle} />
+    <Text bold text={title} style={textStyle} />
   </Pressable>
 );
 
