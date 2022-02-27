@@ -3,6 +3,7 @@ import { View, FlatList, StyleSheet } from "react-native";
 import { Divider } from "../atoms/divider";
 import { Text } from "../atoms/text";
 import { Card } from "./card";
+import { parseYear } from "../../utils/utils";
 
 type MovieProps = {
   adult: boolean;
@@ -36,7 +37,7 @@ const ResultsSection = ({ moviesList, isLoading }: Props) => {
       <FlatList
         data={moviesList}
         renderItem={({ item }) => (
-          <Card title={item.title} text={item.release_date} />
+          <Card title={item.title} text={parseYear(item.release_date)} />
         )}
         keyExtractor={(movie: MovieProps) => movie?.id.toString()}
         ItemSeparatorComponent={() => <Divider transparent />}
