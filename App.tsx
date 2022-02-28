@@ -18,18 +18,15 @@ const styles = StyleSheet.create({
 
 export default function App() {
   const [inputValue, setInputValue] = useState<string>("");
-  const [isLoading, setLoading] = useState(true);
-  const [moviesList, setMoviesList] = useState([]);
+  const [isLoading, setLoading] = useState<boolean>(true);
+  const [moviesList, setMoviesList] = useState<MovieProps[]>([]);
 
   const getMovies = async () => {
-    try {
-      const movies = await getMoviesFromApi(inputValue);
-      setMoviesList(movies);
-    } catch (error) {
-      console.error(error, "error");
-    } finally {
-      setLoading(false);
+    const data = await getMoviesFromApi(inputValue);
+    if (data.success) {
+      setMoviesList(data.results);
     }
+    setLoading(false);
   };
 
   return (
