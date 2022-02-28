@@ -21,24 +21,20 @@ const Card = ({
   title,
   text,
   imageUrl,
-}: Props) => {
-  console.log(imageUrl);
-
-  return (
-    <View style={containerStyle}>
-      <View style={styles.imageContainer}>
-        <Image style={styles.imageStyle} source={{ uri: imageUrl }} />
-      </View>
-      <View style={styles.textContainer}>
-        <Text bold style={titleStyle} text={strings.card.titleText} />
-        <Text style={titleStyle} text={title} />
-        <Divider transparent />
-        <Text bold style={subtitleStyle} text={strings.card.yearText} />
-        <Text style={subtitleStyle} text={text} />
-      </View>
+}: Props) => (
+  <View style={containerStyle}>
+    <View style={styles.imageContainer}>
+      <Image style={styles.imageStyle} source={{ uri: imageUrl }} />
     </View>
-  );
-};
+    <View style={styles.textContainer}>
+      <Text bold style={titleStyle} text={strings.card.titleText} />
+      <Text style={titleStyle} text={title} />
+      <Divider transparent />
+      <Text bold style={subtitleStyle} text={strings.card.yearText} />
+      <Text style={subtitleStyle} text={text} />
+    </View>
+  </View>
+);
 
 Card.defaultProps = {
   containerStyle: styles.containerStyle,

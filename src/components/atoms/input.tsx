@@ -1,5 +1,5 @@
 import React from "react";
-import { TextInput } from "react-native";
+import { TextInput, StyleSheet } from "react-native";
 import defaultTheme from "../../theme/theme";
 
 type Props = {
@@ -8,6 +8,17 @@ type Props = {
   placeholder: string;
   onChangeText: (newText: string) => void;
 };
+
+const styles = StyleSheet.create({
+  textInput: {
+    backgroundColor: defaultTheme.$baseColor,
+    width: "40%",
+    padding: 5,
+    color: defaultTheme.$primaryColor,
+    fontSize: 17,
+    borderRadius: 7,
+  },
+});
 
 const InputText = ({ style, inputValue, placeholder, onChangeText }: Props) => (
   <TextInput
@@ -19,14 +30,7 @@ const InputText = ({ style, inputValue, placeholder, onChangeText }: Props) => (
 );
 
 InputText.defaultProps = {
-  style: {
-    backgroundColor: defaultTheme.$baseColor,
-    width: "40%",
-    padding: 5,
-    color: defaultTheme.$primaryColor,
-    fontSize: 17,
-    borderRadius: 7,
-  },
+  style: styles.textInput,
 };
 
 export { InputText };
