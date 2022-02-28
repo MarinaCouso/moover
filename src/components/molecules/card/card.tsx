@@ -3,6 +3,7 @@ import { View, ViewStyle, TextStyle, Image } from "react-native";
 import { Divider } from "../../atoms/divider";
 import { Text } from "../../atoms/text";
 import styles from "./styles";
+import { IMAGE_PLACEHOLDER } from "../../../constants";
 
 type Props = {
   containerStyle?: ViewStyle;
@@ -12,8 +13,6 @@ type Props = {
   text: string;
   imageUrl: string;
 };
-
-const IMAGE_PLACEHOLDER = "https://www.fillmurray.com/640/360";
 
 const Card = ({
   containerStyle,

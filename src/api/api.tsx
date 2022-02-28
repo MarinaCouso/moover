@@ -1,4 +1,4 @@
-import { API_KEY } from "./constants";
+import { API_KEY } from "../constants";
 
 export const getMoviesFromApi = async (query: string) => {
   try {

@@ -4,6 +4,7 @@ import { Divider } from "../atoms/divider";
 import { Text } from "../atoms/text";
 import { Card } from "./card";
 import { parseYear } from "../../utils/utils";
+import { IMAGE_PATH } from "../../constants";
 
 type MovieProps = {
   adult: boolean;
@@ -41,7 +42,7 @@ const ResultsSection = ({ moviesList, isLoading }: Props) => {
           <Card
             title={item.title}
             text={parseYear(item.release_date)}
-            imageUrl={`https://image.tmdb.org/t/p/w500/${item.poster_path}`}
+            imageUrl={`${IMAGE_PATH}${item.poster_path}`}
           />
         )}
         contentContainerStyle={styles.list}
