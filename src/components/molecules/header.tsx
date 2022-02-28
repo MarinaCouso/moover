@@ -1,5 +1,6 @@
 import React from "react";
 import { View, StyleSheet, ViewStyle, TextStyle } from "react-native";
+import { strings } from "../../strings";
 import { Text } from "../atoms/text";
 
 type Props = {
@@ -23,8 +24,8 @@ const styles = StyleSheet.create({
 
 const Header = ({ containerStyle, subtitleStyle }: Props) => (
   <View style={containerStyle}>
-    <Text bold text="Moover" />
-    <Text style={subtitleStyle} text="Your movies search app!" />
+    <Text bold text={strings.header.title} />
+    <Text style={subtitleStyle} text={strings.header.subtitle} />
   </View>
 );
 

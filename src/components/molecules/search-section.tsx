@@ -1,5 +1,6 @@
 import React from "react";
 import { View, StyleSheet, ViewStyle } from "react-native";
+import { strings } from "../../strings";
 import defaultTheme from "../../theme/theme";
 import { Button } from "../atoms/button";
 import { InputText } from "../atoms/input";
@@ -35,11 +36,15 @@ const SearchForm = ({
 }: Props) => (
   <View style={containerStyle}>
     <InputText
-      placeholder="Type here..."
+      placeholder={strings.search.inputPlaceholder}
       inputValue={inputValue}
       onChangeText={(newText) => setInputValue(newText)}
     />
-    <Button containerStyle={styles.button} title="Search" onPress={onSearch} />
+    <Button
+      containerStyle={styles.button}
+      title={strings.search.buttonTitle}
+      onPress={onSearch}
+    />
   </View>
 );
 

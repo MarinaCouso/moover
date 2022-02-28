@@ -1,5 +1,6 @@
 import React from "react";
 import { View, ViewStyle, TextStyle, Image } from "react-native";
+import { strings } from "../../../strings";
 import { Divider } from "../../atoms/divider";
 import { Text } from "../../atoms/text";
 import styles from "./styles";
@@ -29,10 +30,10 @@ const Card = ({
         <Image style={styles.imageStyle} source={{ uri: imageUrl }} />
       </View>
       <View style={styles.textContainer}>
-        <Text bold style={titleStyle} text="Title" />
+        <Text bold style={titleStyle} text={strings.card.titleText} />
         <Text style={titleStyle} text={title} />
         <Divider transparent />
-        <Text bold style={subtitleStyle} text="Release year" />
+        <Text bold style={subtitleStyle} text={strings.card.yearText} />
         <Text style={subtitleStyle} text={text} />
       </View>
     </View>

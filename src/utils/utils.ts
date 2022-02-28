@@ -1,10 +1,11 @@
 import { IMAGE_PATH, IMAGE_PLACEHOLDER } from "../constants";
+import { strings } from "../strings";
 
 export const parseYear = (date: string) => {
   const formatDate = new Date(date);
   const year = formatDate.getFullYear();
   if (isNaN(year)) {
-    return "Not available";
+    return strings.errorText;
   }
   return year.toString();
 };
