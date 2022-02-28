@@ -3,8 +3,7 @@ import { View, FlatList, StyleSheet } from "react-native";
 import { Divider } from "../atoms/divider";
 import { Text } from "../atoms/text";
 import { Card } from "./card";
-import { parseYear } from "../../utils/utils";
-import { IMAGE_PATH } from "../../constants";
+import { parseYear, renderImage } from "../../utils/utils";
 
 type MovieProps = {
   adult: boolean;
@@ -33,28 +32,26 @@ const styles = StyleSheet.create({
   list: { paddingBottom: 200 },
 });
 
-const ResultsSection = ({ moviesList, isLoading }: Props) => {
-  return (
-    <View style={styles.container}>
-      <FlatList
-        data={moviesList}
-        renderItem={({ item }) => (
-          <Card
-            title={item.title}
-            text={parseYear(item.release_date)}
-            imageUrl={`${IMAGE_PATH}${item.poster_path}`}
-          />
-        )}
-        contentContainerStyle={styles.list}
-        keyExtractor={(movie: MovieProps) => movie?.id.toString()}
-        ItemSeparatorComponent={() => <Divider transparent />}
-      />
-      {!isLoading && !moviesList.length ? (
-        <Text text="There are no results" />
-      ) : null}
-    </View>
-  );
-};
+const ResultsSection = ({ moviesList, isLoading }: Props) => (
+  <View style={styles.container}>
+    <FlatList
+      data={moviesList}
+      renderItem={({ item }) => (
+        <Card
+          title={item.title}
+          text={parseYear(item.release_date)}
+          imageUrl={renderImage(item.poster_path)}
+        />
+      )}
+      contentContainerStyle={styles.list}
+      keyExtractor={(movie: MovieProps) => movie?.id.toString()}
+      ItemSeparatorComponent={() => <Divider transparent />}
+    />
+    {!isLoading && !moviesList.length ? (
+      <Text text="There are no results" />
+    ) : null}
+  </View>
+);
 
 ResultsSection.defaultProps = {
   moviesList: [],
