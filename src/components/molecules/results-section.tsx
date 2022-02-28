@@ -29,6 +29,7 @@ type Props = {
 
 const styles = StyleSheet.create({
   container: { justifyContent: "flex-start" },
+  list: { paddingBottom: 200 },
 });
 
 const ResultsSection = ({ moviesList, isLoading }: Props) => {
@@ -43,6 +44,7 @@ const ResultsSection = ({ moviesList, isLoading }: Props) => {
             imageUrl={`https://image.tmdb.org/t/p/w500/${item.poster_path}`}
           />
         )}
+        contentContainerStyle={styles.list}
         keyExtractor={(movie: MovieProps) => movie?.id.toString()}
         ItemSeparatorComponent={() => <Divider transparent />}
       />
