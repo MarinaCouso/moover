@@ -1,7 +1,8 @@
-import moment from "moment";
-
 export const parseYear = (date: string) => {
-  const formatDate = moment(date, "YYYY-MM--DD");
-  const year = formatDate.year();
+  const formatDate = new Date(date);
+  const year = formatDate.getFullYear();
+  if (isNaN(year)) {
+    return "Not available";
+  }
   return year.toString();
 };
