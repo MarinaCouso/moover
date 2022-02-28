@@ -6,6 +6,7 @@ import { SearchForm } from "./src/components/molecules/search-section";
 import { ResultsSection } from "./src/components/molecules/results-section";
 import defaultTheme from "./src/theme/theme";
 import { getMoviesFromApi } from "./src/api/api";
+import { StatusBar } from "expo-status-bar";
 import { MovieProps } from "./src/types";
 
 const styles = StyleSheet.create({
@@ -33,6 +34,7 @@ export default function App() {
 
   return (
     <SafeAreaView style={styles.appContainer}>
+      <StatusBar backgroundColor={defaultTheme.$backgroundColor} />
       <Header />
       <SearchForm
         setInputValue={setInputValue}
