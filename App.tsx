@@ -3,9 +3,10 @@ import { SafeAreaView, StyleSheet } from "react-native";
 import { Divider } from "./src/components/atoms/divider";
 import { Header } from "./src/components/molecules/header";
 import { SearchForm } from "./src/components/molecules/search-section";
+import { ResultsSection } from "./src/components/molecules/results-section";
 import defaultTheme from "./src/theme/theme";
 import { getMoviesFromApi } from "./src/api/api";
-import { ResultsSection } from "./src/components/molecules/results-section";
+import { MovieProps } from "./src/types";
 
 const styles = StyleSheet.create({
   appContainer: {
