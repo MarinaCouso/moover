@@ -30,7 +30,9 @@ const Text = ({ style, text, bold }: Props) => {
     bold ? styles.bold : null,
   ]);
   return (
-    <TextNativeComponent style={appliedStyles}>{text}</TextNativeComponent>
+    <TextNativeComponent style={appliedStyles} testID="text">
+      {text}
+    </TextNativeComponent>
   );
 };
 
