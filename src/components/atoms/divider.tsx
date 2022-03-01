@@ -25,7 +25,7 @@ const Divider = ({ style, transparent }: Props) => {
     style ? style : styles.dividerStyle,
     transparent ? null : styles.boderStyle,
   ]);
-  return <View style={appliedStyles} />;
+  return <View style={appliedStyles} testID="divider" />;
 };
 
 Divider.defaultProps = {
