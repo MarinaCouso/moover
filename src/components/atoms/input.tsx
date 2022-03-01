@@ -5,7 +5,7 @@ import defaultTheme from "../../theme/theme";
 type Props = {
   style?: object;
   inputValue: string;
-  placeholder: string;
+  placeholder?: string;
   onChangeText: (newText: string) => void;
 };
 
@@ -26,6 +26,7 @@ const InputText = ({ style, inputValue, placeholder, onChangeText }: Props) => (
     placeholder={placeholder}
     value={inputValue}
     onChangeText={onChangeText}
+    testID="text-input"
   />
 );
 
