@@ -24,7 +24,7 @@ const styles = StyleSheet.create({
 });
 
 const Button = ({ containerStyle, textStyle, title, onPress }: Props) => (
-  <Pressable style={containerStyle} onPress={onPress}>
+  <Pressable testID="button" style={containerStyle} onPress={onPress}>
     <Text bold text={title} style={textStyle} />
   </Pressable>
 );
