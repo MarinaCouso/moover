@@ -4,18 +4,22 @@ A simple app to search for movies basic information based on TMDB api.
 
 ## How has it been developed?
 
-Using [React Native](https://reactnative.dev/docs/environment-setup) with Expo and Typescript. 
+Using [React Native](https://reactnative.dev/docs/environment-setup) with Expo and Typescript.
 The api from which the app gets the movies info is [The Movie DataBase](https://developers.themoviedb.org/3/getting-started/introduction).
 
 ## How can I run it?
 
 You would just need to clone it, install with:
 
-npm install
+```bash
+$ npm install
+```
 
 and run it in Expo:
 
-npm start
+```bash
+$ npm start
+```
 
 Then you will choose to use web, Android or Ios simulator.
 
