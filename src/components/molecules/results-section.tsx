@@ -24,8 +24,8 @@ const ResultsSection = ({ moviesList, isLoading }: Props) => (
       renderItem={({ item }) => (
         <Card
           title={item.title}
-          text={parseYear(item.release_date)}
-          imageUrl={renderImage(item.poster_path)}
+          text={parseYear(item.date)}
+          imageUrl={renderImage(item.image)}
         />
       )}
       contentContainerStyle={styles.list}
