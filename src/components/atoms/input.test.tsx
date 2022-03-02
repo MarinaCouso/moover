@@ -5,7 +5,7 @@ import React from "react";
 const mockOnChange = jest.fn();
 
 describe("Text input component renders correctly", () => {
-  it("should renders properly", () => {
+  it("should render properly", () => {
     const { queryByTestId } = render(
       <InputText inputValue="Rachel" onChangeText={mockOnChange} />
     );
@@ -14,7 +14,7 @@ describe("Text input component renders correctly", () => {
     expect(textInput).toBeTruthy();
   });
 
-  it("should renders and changes value properly", () => {
+  it("should render and change value properly", () => {
     const { queryByTestId } = render(
       <InputText inputValue="Rachel" onChangeText={mockOnChange} />
     );
