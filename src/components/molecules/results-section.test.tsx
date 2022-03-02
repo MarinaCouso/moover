@@ -1,6 +1,6 @@
+import React from "react";
 import { ResultsSection } from "./results-section";
 import { render } from "@testing-library/react-native";
-import React from "react";
 import { strings } from "../../strings";
 
 const mockMoviesList = [

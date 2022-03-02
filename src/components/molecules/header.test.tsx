@@ -1,7 +1,7 @@
 import { Header } from "./header";
-import { render } from "@testing-library/react-native";
 import React from "react";
 import defaultTheme from "../../theme/theme";
+import { render } from "@testing-library/react-native";
 
 describe("Header component renders correctly", () => {
   it("should render texts properly", () => {

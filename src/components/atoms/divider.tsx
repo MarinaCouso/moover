@@ -1,5 +1,6 @@
+import { StyleSheet, View, ViewStyle } from "react-native";
+
 import React from "react";
-import { View, ViewStyle, StyleSheet } from "react-native";
 import defaultTheme from "../../theme/theme";
 
 type Props = {
@@ -14,7 +15,7 @@ const styles = StyleSheet.create({
     width: "30%",
     alignSelf: "center",
   },
-  boderStyle: {
+  borderStyle: {
     borderBottomWidth: 1,
     borderBottomColor: defaultTheme.$secondaryColor,
   },
@@ -23,7 +24,7 @@ const styles = StyleSheet.create({
 const Divider = ({ style, transparent }: Props) => {
   const appliedStyles = StyleSheet.flatten([
     style ? style : styles.dividerStyle,
-    transparent ? null : styles.boderStyle,
+    transparent ? null : styles.borderStyle,
   ]);
   return <View style={appliedStyles} testID="divider" />;
 };

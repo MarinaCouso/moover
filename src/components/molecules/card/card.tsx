@@ -1,9 +1,10 @@
 import React, { useState } from "react";
-import { View, ViewStyle, TextStyle } from "react-native";
-import { IMAGE_PLACEHOLDER } from "../../../constants";
+import { TextStyle, View, ViewStyle } from "react-native";
+
 import { Divider } from "../../atoms/divider";
-import { Text } from "../../atoms/text";
+import { IMAGE_PLACEHOLDER } from "../../../constants";
 import { Image } from "../../atoms/image";
+import { Text } from "../../atoms/text";
 import styles from "./styles";
 
 type Props = {

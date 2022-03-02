@@ -1,10 +1,11 @@
-import React from "react";
-import { View, FlatList, StyleSheet } from "react-native";
-import { Divider } from "../atoms/divider";
-import { Text } from "../atoms/text";
-import { Card } from "./card";
+import { FlatList, StyleSheet, View } from "react-native";
 import { parseYear, renderImage } from "../../utils/utils";
+
+import { Card } from "./card";
+import { Divider } from "../atoms/divider";
 import { MovieProps } from "../../types";
+import React from "react";
+import { Text } from "../atoms/text";
 import { strings } from "../../strings";
 
 type Props = {

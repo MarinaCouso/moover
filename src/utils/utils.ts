@@ -1,4 +1,5 @@
 import { IMAGE_PATH, IMAGE_PLACEHOLDER } from "../constants";
+
 import { strings } from "../strings";
 
 export const parseYear = (date: string) => {

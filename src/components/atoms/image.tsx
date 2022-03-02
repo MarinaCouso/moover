@@ -1,5 +1,6 @@
+import { ImageStyle, Image as NativeImageComponent } from "react-native";
 import React, { useState } from "react";
-import { Image as NativeImageComponent, ImageStyle } from "react-native";
+
 import { IMAGE_PLACEHOLDER } from "../../constants";
 import { StyleSheet } from "react-native";
 

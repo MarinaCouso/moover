@@ -1,5 +1,6 @@
+import { StyleSheet, TextInput } from "react-native";
+
 import React from "react";
-import { TextInput, StyleSheet } from "react-native";
 import defaultTheme from "../../theme/theme";
 
 type Props = {

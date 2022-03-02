@@ -1,7 +1,8 @@
+import { StyleSheet, TextStyle, View, ViewStyle } from "react-native";
+
 import React from "react";
-import { View, StyleSheet, ViewStyle, TextStyle } from "react-native";
-import defaultTheme from "../../theme/theme";
 import { Text } from "../atoms/text";
+import defaultTheme from "../../theme/theme";
 
 type Props = {
   containerStyle?: ViewStyle;

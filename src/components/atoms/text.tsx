@@ -1,9 +1,10 @@
-import React from "react";
 import {
+  StyleSheet,
   Text as TextNativeComponent,
   TextStyle,
-  StyleSheet,
 } from "react-native";
+
+import React from "react";
 import defaultTheme from "../../theme/theme";
 
 type Props = {

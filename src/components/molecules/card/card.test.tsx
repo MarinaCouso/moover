@@ -1,7 +1,7 @@
-import React from "react";
 import { Card } from "./card";
-import { render } from "@testing-library/react-native";
+import React from "react";
 import defaultTheme from "../../../theme/theme";
+import { render } from "@testing-library/react-native";
 
 const mockProps = {
   containerStyle: { backgroundColor: defaultTheme.$backgroundColor },

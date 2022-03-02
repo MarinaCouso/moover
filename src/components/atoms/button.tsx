@@ -1,7 +1,8 @@
-import React from "react";
 import { Pressable, StyleSheet, TextStyle, ViewStyle } from "react-native";
-import defaultTheme from "../../theme/theme";
+
+import React from "react";
 import { Text } from "./text";
+import defaultTheme from "../../theme/theme";
 
 type Props = {
   containerStyle?: ViewStyle;

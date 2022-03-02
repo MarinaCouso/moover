@@ -1,6 +1,6 @@
+import React from "react";
 import { Text } from "./text";
 import { render } from "@testing-library/react-native";
-import React from "react";
 
 describe("Text component renders correctly", () => {
   it("should render child text properly", () => {

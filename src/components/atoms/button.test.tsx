@@ -1,5 +1,6 @@
-import { Button } from "./button";
 import { fireEvent, render } from "@testing-library/react-native";
+
+import { Button } from "./button";
 import React from "react";
 import defaultTheme from "../../theme/theme";
 

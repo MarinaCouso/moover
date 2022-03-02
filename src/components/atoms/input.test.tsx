@@ -1,5 +1,6 @@
-import { InputText } from "./input";
 import { fireEvent, render, waitFor } from "@testing-library/react-native";
+
+import { InputText } from "./input";
 import React from "react";
 
 const mockOnChange = jest.fn();
