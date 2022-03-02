@@ -1,9 +1,6 @@
 import { Text } from "./text";
-import { fireEvent, render } from "@testing-library/react-native";
+import { render } from "@testing-library/react-native";
 import React from "react";
-import defaultTheme from "../../theme/theme";
-
-const mockOnPress = jest.fn();
 
 describe("Text component renders correctly", () => {
   it("should render child text properly", () => {
@@ -13,7 +10,7 @@ describe("Text component renders correctly", () => {
     expect(text).toBeTruthy();
   });
 
-  it("should run mockOnPress", () => {
+  it("should render styles properly", () => {
     const { queryByTestId } = render(<Text text="This is a text" bold />);
 
     const text = queryByTestId("text");

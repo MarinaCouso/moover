@@ -1,9 +1,9 @@
+import React from "react";
 import { Image } from "./image";
 import { render } from "@testing-library/react-native";
-import React from "react";
 
 describe("Image component renders correctly", () => {
-  it("should render image  properly", () => {
+  it("should render image properly", () => {
     const { queryByTestId } = render(
       <Image imageUrl="https://picsum.photos/200/300" />
     );

@@ -1,6 +1,6 @@
-import { Card } from "./card";
-import { fireEvent, render, waitFor } from "@testing-library/react-native";
 import React from "react";
+import { Card } from "./card";
+import { render } from "@testing-library/react-native";
 import defaultTheme from "../../../theme/theme";
 
 const mockProps = {

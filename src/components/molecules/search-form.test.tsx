@@ -1,7 +1,6 @@
 import { SearchForm } from "./search-form";
-import { fireEvent, render, waitFor } from "@testing-library/react-native";
+import { fireEvent, render } from "@testing-library/react-native";
 import React from "react";
-import { strings } from "../../strings";
 
 const mockSetInputValue = jest.fn();
 const mockOnSearch = jest.fn();

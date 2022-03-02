@@ -25,5 +25,6 @@ describe("Text input component renders correctly", () => {
     fireEvent.changeText(textInput, "Pep");
 
     expect(mockOnChange).toHaveBeenCalledTimes(1);
+    expect(mockOnChange).toHaveBeenCalledWith("Pep");
   });
 });
