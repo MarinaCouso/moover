@@ -7,7 +7,7 @@ import { ResultsSection } from "./src/components/molecules/results-section";
 import defaultTheme from "./src/theme/theme";
 import { getMoviesFromApi } from "./src/api/api";
 import { StatusBar } from "expo-status-bar";
-import { MovieProps } from "./src/types";
+import { ApiMovieProps, ApiDataProps, MovieProps } from "./src/types";
 import { strings } from "./src/strings";
 
 const styles = StyleSheet.create({
@@ -17,6 +17,17 @@ const styles = StyleSheet.create({
   },
 });
 
+const parseData = (data: ApiDataProps) => {
+  return data.results.map((item: ApiMovieProps) => {
+    return {
+      id: item.id,
+      title: item.title,
+      image: item.poster_path,
+      date: item.release_date,
+    };
+  });
+};
+
 export default function App() {
   const [inputValue, setInputValue] = useState<string>("");
   const [isLoading, setLoading] = useState<boolean>(true);
@@ -25,7 +36,8 @@ export default function App() {
   const getMovies = async () => {
     const data = await getMoviesFromApi(inputValue);
     if (data.success) {
-      setMoviesList(data.results);
+      const parsedMovies = parseData(data);
+      setMoviesList(parsedMovies);
     }
     setLoading(false);
   };

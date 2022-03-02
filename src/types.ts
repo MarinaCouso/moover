@@ -1,4 +1,4 @@
-export type MovieProps = {
+export type ApiMovieProps = {
   adult: boolean;
   backdrop_path: string;
   genre_ids: Array<number>;
@@ -13,4 +13,19 @@ export type MovieProps = {
   video: boolean;
   vote_average: number;
   vote_count: number;
+};
+
+export type ApiDataProps = {
+  totalPages: {};
+  totalResults: {};
+  success: boolean;
+  results: ApiMovieProps[];
+  page: number;
+};
+
+export type MovieProps = {
+  id: number;
+  title: string;
+  image: string;
+  date: string;
 };
