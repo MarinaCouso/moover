@@ -8,6 +8,7 @@ import defaultTheme from "./src/theme/theme";
 import { getMoviesFromApi } from "./src/api/api";
 import { StatusBar } from "expo-status-bar";
 import { MovieProps } from "./src/types";
+import { strings } from "./src/strings";
 
 const styles = StyleSheet.create({
   appContainer: {
@@ -32,7 +33,7 @@ export default function App() {
   return (
     <SafeAreaView style={styles.appContainer}>
       <StatusBar backgroundColor={defaultTheme.$backgroundColor} />
-      <Header />
+      <Header title={strings.header.title} subtitle={strings.header.subtitle} />
       <SearchForm
         setInputValue={setInputValue}
         inputValue={inputValue}

@@ -1,11 +1,14 @@
 import React from "react";
 import { View, StyleSheet, ViewStyle, TextStyle } from "react-native";
-import { strings } from "../../strings";
+import defaultTheme from "../../theme/theme";
 import { Text } from "../atoms/text";
 
 type Props = {
   containerStyle?: ViewStyle;
   subtitleStyle?: TextStyle;
+  titleStyle?: TextStyle;
+  title: string;
+  subtitle?: string;
 };
 
 const styles = StyleSheet.create({
@@ -17,15 +20,21 @@ const styles = StyleSheet.create({
   subTitle: {
     fontSize: 17,
     padding: 5,
-    color: "#4634DA",
+    color: defaultTheme.$primaryColor,
     textAlign: "center",
   },
 });
 
-const Header = ({ containerStyle, subtitleStyle }: Props) => (
+const Header = ({
+  containerStyle,
+  titleStyle,
+  subtitleStyle,
+  title,
+  subtitle,
+}: Props) => (
   <View style={containerStyle}>
-    <Text bold text={strings.header.title} />
-    <Text style={subtitleStyle} text={strings.header.subtitle} />
+    <Text bold text={title} style={titleStyle} />
+    {subtitle ? <Text style={subtitleStyle} text={subtitle} /> : null}
   </View>
 );
 

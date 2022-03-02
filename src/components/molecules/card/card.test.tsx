@@ -10,7 +10,7 @@ const mockProps = {
   imageUrl: "https://picsum.photos/200/300",
 };
 
-describe("Text input component renders correctly", () => {
+describe("Card component renders correctly", () => {
   it("should render texts properly", () => {
     const { getByText } = render(<Card {...mockProps} />);
 
