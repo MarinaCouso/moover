@@ -1,4 +1,4 @@
-import React, { useEffect, useLayoutEffect, useState } from "react";
+import React, { useState } from "react";
 import { Image as NativeImageComponent, ImageStyle } from "react-native";
 import { IMAGE_PLACEHOLDER } from "../../constants";
 import { StyleSheet } from "react-native";
@@ -20,23 +20,17 @@ const styles = StyleSheet.create({
 });
 
 const Image = ({ imageUrl, imageStyle, placeholder }: Props) => {
-  const [imageToRender, setImageToRender] = useState(IMAGE_PLACEHOLDER);
-
-  useLayoutEffect(() => {
-    setImageToRender(imageUrl);
-  }, []);
+  const [imageToRender, setImageToRender] = useState(imageUrl);
 
   return (
-    <>
-      <NativeImageComponent
-        onError={() =>
-          setImageToRender(placeholder ? placeholder : IMAGE_PLACEHOLDER)
-        }
-        testID="image"
-        style={imageStyle}
-        source={{ uri: imageToRender }}
-      />
-    </>
+    <NativeImageComponent
+      onError={() =>
+        setImageToRender(placeholder ? placeholder : IMAGE_PLACEHOLDER)
+      }
+      testID="image"
+      style={imageStyle}
+      source={{ uri: imageToRender }}
+    />
   );
 };
 
