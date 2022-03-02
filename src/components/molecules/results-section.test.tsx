@@ -18,7 +18,7 @@ const mockMoviesList = [
   },
 ];
 
-describe("ResultsSection component renders correctly", () => {
+describe("Results section renders correctly", () => {
   it("should render title properly", () => {
     const { getByText } = render(
       <ResultsSection moviesList={mockMoviesList} isLoading={false} />
@@ -27,6 +27,7 @@ describe("ResultsSection component renders correctly", () => {
     const title = getByText("Jack Reacher");
     expect(title).toBeTruthy();
   });
+
   it("should calculate and render year properly", () => {
     const { getByText } = render(
       <ResultsSection moviesList={mockMoviesList} isLoading={false} />

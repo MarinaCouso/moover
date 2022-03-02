@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { SafeAreaView, StyleSheet } from "react-native";
 import { Divider } from "./src/components/atoms/divider";
 import { Header } from "./src/components/molecules/header";
-import { SearchForm } from "./src/components/molecules/search-section";
+import { SearchForm } from "./src/components/molecules/search-form";
 import { ResultsSection } from "./src/components/molecules/results-section";
 import defaultTheme from "./src/theme/theme";
 import { getMoviesFromApi } from "./src/api/api";
@@ -47,6 +47,8 @@ export default function App() {
       <StatusBar backgroundColor={defaultTheme.$backgroundColor} />
       <Header title={strings.header.title} subtitle={strings.header.subtitle} />
       <SearchForm
+        buttonTitle={strings.search.buttonTitle}
+        placeholder={strings.search.inputPlaceholder}
         setInputValue={setInputValue}
         inputValue={inputValue}
         onSearch={getMovies}

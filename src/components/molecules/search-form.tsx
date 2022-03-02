@@ -10,6 +10,8 @@ type Props = {
   inputValue: string;
   setInputValue: (newText: string) => void;
   onSearch: () => void;
+  placeholder?: string;
+  buttonTitle: string;
 };
 
 const styles = StyleSheet.create({
@@ -29,20 +31,22 @@ const styles = StyleSheet.create({
 });
 
 const SearchForm = ({
+  buttonTitle,
   containerStyle,
   inputValue,
   setInputValue,
   onSearch,
+  placeholder,
 }: Props) => (
   <View style={containerStyle}>
     <InputText
-      placeholder={strings.search.inputPlaceholder}
+      placeholder={placeholder}
       inputValue={inputValue}
       onChangeText={(newText) => setInputValue(newText)}
     />
     <Button
       containerStyle={styles.button}
-      title={strings.search.buttonTitle}
+      title={buttonTitle}
       onPress={onSearch}
     />
   </View>
