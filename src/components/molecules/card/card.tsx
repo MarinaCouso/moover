@@ -1,8 +1,9 @@
-import React from "react";
-import { View, ViewStyle, TextStyle, Image } from "react-native";
-import { strings } from "../../../strings";
+import React, { useState } from "react";
+import { View, ViewStyle, TextStyle } from "react-native";
+import { IMAGE_PLACEHOLDER } from "../../../constants";
 import { Divider } from "../../atoms/divider";
 import { Text } from "../../atoms/text";
+import { Image } from "../../atoms/image";
 import styles from "./styles";
 
 type Props = {
@@ -22,15 +23,19 @@ const Card = ({
   text,
   imageUrl,
 }: Props) => (
-  <View style={containerStyle}>
+  <View style={containerStyle} testID="card-container">
     <View style={styles.imageContainer}>
-      <Image style={styles.imageStyle} source={{ uri: imageUrl }} />
+      <Image
+        placeholder={IMAGE_PLACEHOLDER}
+        imageStyle={styles.imageStyle}
+        imageUrl={imageUrl}
+      />
     </View>
     <View style={styles.textContainer}>
-      <Text bold style={titleStyle} text={strings.card.titleText} />
+      <Text bold style={titleStyle} text="Title" />
       <Text style={titleStyle} text={title} />
       <Divider transparent />
-      <Text bold style={subtitleStyle} text={strings.card.yearText} />
+      <Text bold style={subtitleStyle} text="Release year" />
       <Text style={subtitleStyle} text={text} />
     </View>
   </View>
