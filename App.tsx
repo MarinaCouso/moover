@@ -1,13 +1,14 @@
 import React, { useState } from "react";
 import { SafeAreaView, StyleSheet } from "react-native";
+
 import { Divider } from "./src/components/atoms/divider";
 import { Header } from "./src/components/molecules/header";
-import { SearchForm } from "./src/components/molecules/search-form";
+import { MovieProps } from "./src/types";
 import { ResultsSection } from "./src/components/molecules/results-section";
+import { SearchForm } from "./src/components/molecules/search-form";
+import { StatusBar } from "expo-status-bar";
 import defaultTheme from "./src/theme/theme";
 import { getMoviesFromApi } from "./src/api/api";
-import { StatusBar } from "expo-status-bar";
-import { ApiMovieProps, ApiDataProps, MovieProps } from "./src/types";
 import { strings } from "./src/strings";
 
 const styles = StyleSheet.create({
@@ -17,17 +18,6 @@ const styles = StyleSheet.create({
   },
 });
 
-const parseData = (data: ApiDataProps) => {
-  return data.results.map((item: ApiMovieProps) => {
-    return {
-      id: item.id,
-      title: item.title,
-      image: item.poster_path,
-      date: item.release_date,
-    };
-  });
-};
-
 export default function App() {
   const [inputValue, setInputValue] = useState<string>("");
   const [isLoading, setLoading] = useState<boolean>(true);
@@ -36,8 +26,7 @@ export default function App() {
   const getMovies = async () => {
     const data = await getMoviesFromApi(inputValue);
     if (data.success) {
-      const parsedMovies = parseData(data);
-      setMoviesList(parsedMovies);
+      setMoviesList(data.results);
     }
     setLoading(false);
   };
